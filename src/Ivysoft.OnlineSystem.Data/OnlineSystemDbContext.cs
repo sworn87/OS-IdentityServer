@@ -1,17 +1,17 @@
 ﻿using Ivysoft.OnlineSystem.Data.Models;
 using Ivysoft.OnlineSystem.Data.Models.Contracts;
-using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
-using System.Data.Entity;
 using System.Linq;
 
 namespace Ivysoft.OnlineSystem.Data
 {
     public class OnlineSystemDbContext : IdentityDbContext<User>
     {
-        public OnlineSystemDbContext()
-            : base("LocalConnection", throwIfV1Schema: false)
-        {
+        public OnlineSystemDbContext(DbContextOptions<OnlineSystemDbContext> options)
+                    : base(options)
+                {
         }
 
         public DbSet<Customer> Customers { get; set; }
@@ -42,9 +42,22 @@ namespace Ivysoft.OnlineSystem.Data
             }
         }
 
-        public static OnlineSystemDbContext Create()
+        //public static OnlineSystemDbContext Create()
+        //{
+        //    return new OnlineSystemDbContext();
+        //}
+
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            return new OnlineSystemDbContext();
+            base.OnModelCreating(builder);
+
+            builder.Entity<CustomerCustomerDemo>().HasKey(t => new { t.CustomerId, t.CustomerTypeId });
+            builder.Entity<EmployeeTerritory>().HasKey(t => new { t.EmployeeId, t.TerritoryId });
+            builder.Entity<OrderDetail>().HasKey(t => new { t.OrderId, t.ProductId });
+
+            // Customize the ASP.NET Identity model and override the defaults if needed.
+            // For example, you can rename the ASP.NET Identity table names and more.
+            // Add your customizations after calling base.OnModelCreating(builder);
         }
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)

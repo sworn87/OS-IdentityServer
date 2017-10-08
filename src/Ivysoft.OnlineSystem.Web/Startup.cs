@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Ivysoft.OnlineSystem.Web.Data;
-using Ivysoft.OnlineSystem.Web.Models;
 using Ivysoft.OnlineSystem.Web.Services;
 using Ivysoft.OnlineSystem.Web.Infrastructure.IdentityServer;
+using Ivysoft.OnlineSystem.Data;
+using Ivysoft.OnlineSystem.Data.Models;
+using Ivysoft.OnlineSystem.Data.Migrations;
 
 namespace Ivysoft.OnlineSystem.Web
 {
@@ -27,11 +25,13 @@ namespace Ivysoft.OnlineSystem.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<OnlineSystemDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+            services.AddTransient<OnlineSystemSeedData>();
+
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<OnlineSystemDbContext>()
                 .AddDefaultTokenProviders();
 
             // Add application services.
@@ -46,11 +46,11 @@ namespace Ivysoft.OnlineSystem.Web
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApiResources())
                 .AddInMemoryClients(Config.GetClients())
-                .AddAspNetIdentity<ApplicationUser>();
+                .AddAspNetIdentity<User>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, OnlineSystemSeedData seeder)
         {
             if (env.IsDevelopment())
             {
@@ -76,6 +76,16 @@ namespace Ivysoft.OnlineSystem.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            try
+            {
+                seeder.SeedData().Wait();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

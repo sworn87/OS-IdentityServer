@@ -12,10 +12,20 @@ namespace Ivysoft.OnlineSystem.Web
 {
     public class Program
     {
+        //public static void Main(string[] args)
+        //{
+        //    Console.Title = "Online System Server";
+
+        //    CreateWebHost(args).Run();
+        //}
+
+        //public static IWebHost CreateWebHost(string[] args) =>
+        //    WebHost.CreateDefaultBuilder(args)
+        //        .UseStartup<Startup>()
+        //        .Build();
+
         public static void Main(string[] args)
         {
-            Console.Title = "Online System Server";
-
             BuildWebHost(args).Run();
         }
 

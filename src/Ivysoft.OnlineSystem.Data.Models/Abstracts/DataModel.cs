@@ -16,15 +16,23 @@ namespace Ivysoft.OnlineSystem.Data.Models.Abstracts
         //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         //public int Id { get; set; }
 
-        [Index]
+        //[Index]
+
+        [NotMapped]
         public bool IsDeleted { get; set; }
 
+
+        [NotMapped]
         [DataType(DataType.DateTime)]
         public DateTime? DeletedOn { get; set; }
 
+
+        [NotMapped]
         [DataType(DataType.DateTime)]
         public DateTime? CreatedOn { get; set; }
 
+
+        [NotMapped]
         [DataType(DataType.DateTime)]
         public DateTime? ModifiedOn { get; set; }
     }

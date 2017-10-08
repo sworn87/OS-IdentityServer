@@ -1,11 +1,8 @@
 ﻿using Ivysoft.OnlineSystem.Data.Models.Contracts;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ivysoft.OnlineSystem.Data.Repositories
 {
@@ -37,7 +34,7 @@ namespace Ivysoft.OnlineSystem.Data.Repositories
 
         public void Add(T entity)
         {
-            DbEntityEntry entry = this.context.Entry(entity);
+            EntityEntry entry = this.context.Entry(entity);
 
             if (entry.State != EntityState.Detached)
             {
@@ -60,7 +57,7 @@ namespace Ivysoft.OnlineSystem.Data.Repositories
 
         public void Update(T entity)
         {
-            DbEntityEntry entry = this.context.Entry(entity);
+            EntityEntry entry = this.context.Entry(entity);
             if (entry.State == EntityState.Detached)
             {
                 this.context.Set<T>().Attach(entity);

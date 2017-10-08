@@ -7,11 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{59A4EFD0-3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8BCFA161-81DA-4FE3-8CC6-88C6D057C8A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ivysoft.OnlineSystem.Data", "Ivysoft.OnlineSystem.Data\Ivysoft.OnlineSystem.Data.csproj", "{1451BACA-F34B-40C9-8E85-A53739F0F7B7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ivysoft.OnlineSystem.Data.Models", "Ivysoft.OnlineSystem.Data.Models\Ivysoft.OnlineSystem.Data.Models.csproj", "{9BA91457-D53C-44BF-BFE9-36FA89425E1C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ivysoft.OnlineSystem.Services", "Ivysoft.OnlineSystem.Services\Ivysoft.OnlineSystem.Services.csproj", "{6699CC71-9740-4D5F-AC34-CC5E60F1BBC2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{A1590F97-57C2-4E65-9795-A5B409BDA354}"
 EndProject
@@ -21,24 +17,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ivysoft.OnlineSystem.Web", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ivysoft.OnlineSystem.API", "Ivysoft.OnlineSystem.API\Ivysoft.OnlineSystem.API.csproj", "{ED29C5A5-A8A0-4A8B-99B1-9159DDFDA401}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ivysoft.OnlineSystem.Data", "Ivysoft.OnlineSystem.Data\Ivysoft.OnlineSystem.Data.csproj", "{91FAB449-3D30-48F2-A813-CB3CDBCE970C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ivysoft.OnlineSystem.Services", "Ivysoft.OnlineSystem.Services\Ivysoft.OnlineSystem.Services.csproj", "{6DCD9269-FB4C-4284-BE7C-2E226C4CBBF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1451BACA-F34B-40C9-8E85-A53739F0F7B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1451BACA-F34B-40C9-8E85-A53739F0F7B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1451BACA-F34B-40C9-8E85-A53739F0F7B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1451BACA-F34B-40C9-8E85-A53739F0F7B7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9BA91457-D53C-44BF-BFE9-36FA89425E1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9BA91457-D53C-44BF-BFE9-36FA89425E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BA91457-D53C-44BF-BFE9-36FA89425E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BA91457-D53C-44BF-BFE9-36FA89425E1C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6699CC71-9740-4D5F-AC34-CC5E60F1BBC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6699CC71-9740-4D5F-AC34-CC5E60F1BBC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6699CC71-9740-4D5F-AC34-CC5E60F1BBC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6699CC71-9740-4D5F-AC34-CC5E60F1BBC2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{03CDED8A-0EF7-4277-9361-4950AD2E9B9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{03CDED8A-0EF7-4277-9361-4950AD2E9B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03CDED8A-0EF7-4277-9361-4950AD2E9B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,15 +43,23 @@ Global
 		{ED29C5A5-A8A0-4A8B-99B1-9159DDFDA401}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED29C5A5-A8A0-4A8B-99B1-9159DDFDA401}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED29C5A5-A8A0-4A8B-99B1-9159DDFDA401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91FAB449-3D30-48F2-A813-CB3CDBCE970C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91FAB449-3D30-48F2-A813-CB3CDBCE970C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91FAB449-3D30-48F2-A813-CB3CDBCE970C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91FAB449-3D30-48F2-A813-CB3CDBCE970C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DCD9269-FB4C-4284-BE7C-2E226C4CBBF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DCD9269-FB4C-4284-BE7C-2E226C4CBBF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DCD9269-FB4C-4284-BE7C-2E226C4CBBF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DCD9269-FB4C-4284-BE7C-2E226C4CBBF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{1451BACA-F34B-40C9-8E85-A53739F0F7B7} = {59A4EFD0-39FD-442A-B980-59F7DE0D409D}
 		{9BA91457-D53C-44BF-BFE9-36FA89425E1C} = {59A4EFD0-39FD-442A-B980-59F7DE0D409D}
-		{6699CC71-9740-4D5F-AC34-CC5E60F1BBC2} = {8BCFA161-81DA-4FE3-8CC6-88C6D057C8A1}
 		{03CDED8A-0EF7-4277-9361-4950AD2E9B9C} = {A1590F97-57C2-4E65-9795-A5B409BDA354}
+		{91FAB449-3D30-48F2-A813-CB3CDBCE970C} = {59A4EFD0-39FD-442A-B980-59F7DE0D409D}
+		{6DCD9269-FB4C-4284-BE7C-2E226C4CBBF5} = {8BCFA161-81DA-4FE3-8CC6-88C6D057C8A1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {988CBAF7-9CFC-49AB-8031-79D109EAA456}

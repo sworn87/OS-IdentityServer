@@ -1,8 +1,8 @@
 @using Microsoft.AspNetCore.Identity
 @using Ivysoft.OnlineSystem.Web.Models
-
-@inject SignInManager<ApplicationUser> SignInManager
-@inject UserManager<ApplicationUser> UserManager
+@using Ivysoft.OnlineSystem.Data.Models
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
 
 @if (SignInManager.IsSignedIn(User))
 {
